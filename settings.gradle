@@ -1,0 +1,6 @@
+rootProject.name = 'share-fabric'
+include 'grpc-lib'
+include 'fabric-web'
+include 'fabric-getway'
+include 'local-server'
+

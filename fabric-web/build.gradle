@@ -1,0 +1,29 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'net.devh:grpc-client-spring-boot-starter'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation 'org.hyperledger.fabric:fabric-gateway-java'
+    implementation 'org.junit.platform:junit-platform-launcher:'
+    implementation 'org.junit.vintage:junit-vintage-engine:'
+    implementation 'com.alibaba:druid-spring-boot-starter:1.2.8'
+    implementation 'mysql:mysql-connector-java:5.1.48'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.aspectj:aspectjweaver'
+    implementation 'org.apache.commons:commons-lang3:3.8'
+    implementation 'io.netty:netty-all'
+    implementation 'io.grpc:grpc-netty'
+    implementation 'com.alibaba:fastjson:1.2.80'
+    implementation 'org.redisson:redisson-spring-boot-starter:3.11.4'
+//    implementation 'com.owlike:genson:1.6'
+    implementation project(':grpc-lib')
+    implementation project(':fabric-getway')
+}

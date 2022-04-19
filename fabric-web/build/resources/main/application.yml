@@ -1,0 +1,89 @@
+server:
+  port: 8080
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 5000
+#    redisson:
+#      file: classpath:redisson-single.yml
+  application:
+    name: local-grpc-client
+  # datasource 数据源配置内容
+  datasource:
+    # 上传数据源配置
+    master:
+      url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: mickhuu
+      driver_class_name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
+        # Druid 自定义配置，对应 DruidDataSource 中的 setting 方法的属性
+      max-active: 50
+      initial-size: 1
+      min-idle: 50
+      max-wait: 600
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      poolPreparedStatements: true
+    slave1:
+      url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      username: root   # 只读账户
+      password: mickhuu
+      driver_class_name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
+      max-active: 50
+      initial-size: 1
+      min-idle: 50
+      max-wait: 600
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      poolPreparedStatements: true
+    slave2:
+      url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      username: root   # 只读账户
+      password: mickhuu
+      driver_class_name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource # 设置类型为 DruidDataSource
+      max-active: 50
+      initial-size: 1
+      min-idle: 50
+      max-wait: 600
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      poolPreparedStatements: true
+    # Druid 自定已配置
+    druid:
+      # 过滤器配置
+      filter:
+        stat: # 配置 StatFilter ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+          log-slow-sql: true # 开启慢查询记录
+          slow-sql-millis: 5000 # 慢 SQL 的标准，单位：毫秒
+      # StatViewServlet 配置
+      stat-view-servlet: # 配置 StatViewServlet ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
+        enabled: true # 是否开启 StatViewServlet
+        login-username: mickhu # 账号
+        login-password: mickhu # 密码
+#      max-pool-prepared-statement-per-connection-size: 500
+#      remove-abandoned: true
+#      remove-abandoned-timeout: 30
+
+grpc:
+  client:
+    # gRPC配置的名字，GrpcClient注解会用到
+    local-grpc-server:
+      # gRPC服务端地址
+      address: 'static://127.0.0.1:7051'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext

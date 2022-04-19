@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
+        </processorPath>
+        <module name="share-fabric.grpc-lib.main" />
+        <module name="share-fabric.fabric-getway.test" />
+        <module name="share-fabric.local-server.main" />
+        <module name="share-fabric.test" />
+        <module name="share-fabric.grpc-lib.test" />
+        <module name="share-fabric.local-server.test" />
+        <module name="share-fabric.fabric-getway.main" />
+        <module name="share-fabric.fabric-web.test" />
+        <module name="share-fabric.main" />
+        <module name="share-fabric.fabric-web.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8" />
+  </component>
+</project>

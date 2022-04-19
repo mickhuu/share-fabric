@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Implementation-Title: fabric-getway
+Build-Date: 2022-04-18
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: travis
+Specification-Vendor: Will Zhao
+Specification-Title: fabric-getway
+Implementation-Vendor: Will Zhao
+Built-OS: Windows 10
+Build-Revision: 
+Build-Time: 10:29:04.106+0800
+Created-By: 1.8.0_77 (Oracle Corporation 25.77-b03)
+Specification-Version: 1.0-SNAPSHOT
+
